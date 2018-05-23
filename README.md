@@ -309,20 +309,120 @@ class Solution {
 
 ##### 169. 求众数
 ```java  
- 
+class Solution {
+    public int majorityElement(int[] nums) {
+        int n = nums.length;
+        int major = nums[0];
+        int cnt = 1;
+        for(int i = 1 ; i < n ; i++){
+            if(cnt == 0){
+                major = nums[i];
+                cnt = 1;
+            }
+            else if(major != nums[i]){
+                cnt--;
+            }
+            else if(major == nums[i]){
+                cnt++;
+            }
+        }
+        return major;
+    }
+} 
 ```
 
 ##### 442. 数组中重复的数据
 ```java  
- 
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        for(int i = 0 ; i < nums.length ; i++){
+            int index = Math.abs(nums[i])-1;
+            nums[index] = -nums[index];
+            if(nums[index] > 0){
+                list.add(index+1);
+            }
+        }
+        return list;
+    }
+} 
 ```
 
 ##### 448. 找到所有数组中消失的数字
 ```java  
  
 ```
+
 ## 树
+##### 103. 二叉树的锯齿形层次遍历
+```java  
+ 
+```
+
+##### 105. 从前序与中序遍历序列构造二叉树
+```java  
+ 
+```
+##### 226. 翻转二叉树 
+```java  
+ 
+```
+
+##### 236. 二叉树的最近公共祖先
+```java  
+ 
+```
+
+##### 606. 根据二叉树创建字符串
+```java  
+ 
+```
 
 ## 动态规划
+##### 53. 最大子序和
+```java  
+ 
+```
+
+##### 72. 编辑距离
+```java  
+ 
+```
+
+##### 300. 最长上升子序列
+```java  
+ 
+```
+
+##### 673. 最长递增子序列的个数
+```java  
+ 
+```
 
 ## 数学
+
+##### 50. Pow(x, n)
+```java  
+ 
+```
+
+##### 69. x 的平方根
+```java  
+ 
+```
+
+##### 137. 只出现一次的数字 II
+```java  
+ 
+```
+
+##### 342. 4的幂
+```java  
+ 
+```
+
+##### 367. 有效的完全平方数
+```java  
+ 
+```
+
